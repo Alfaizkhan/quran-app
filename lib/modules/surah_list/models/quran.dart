@@ -64,24 +64,21 @@ class NameTranslations {
   NameTranslations({
     this.ar,
     this.en,
-    this.id,
   });
 
   factory NameTranslations.fromJson(Map<String, dynamic> json) =>
       NameTranslations(
         ar: json['ar'] as String?,
         en: json['en'] as String?,
-        id: json['id'] as String?,
       );
 
   String? ar;
   String? en;
-  String? id;
+  // String? id;
 
   Map<String, dynamic> toJson() => {
         'ar': ar,
         'en': en,
-        'id': id,
       };
 }
 
@@ -174,26 +171,22 @@ class Verse {
     this.number,
     this.text,
     this.translationEn,
-    this.translationId,
   });
 
   factory Verse.fromJson(Map<String, dynamic> json) => Verse(
         number: json['number'] as int?,
         text: json['text'] as String?,
         translationEn: json['translation_en'] as String?,
-        translationId: json['translation_id'] as String?,
       );
 
   int? number;
   String? text;
   String? translationEn;
-  String? translationId;
 
   Map<String, dynamic> toJson() => {
         'number': number,
         'text': text,
         'translation_en': translationEn,
-        'translation_id': translationId,
       };
 }
 

@@ -45,7 +45,7 @@ class ActionButton extends StatelessWidget {
                     : Icons.arrow_forward,
               ),
               label: Text(
-                type == ButtonActionType.back ? 'Kembali' : 'Lanjut',
+                type == ButtonActionType.back ? 'Back' : 'Forward',
                 style: const TextStyle(fontFamily: 'Poppins'),
               ),
               style: ElevatedButton.styleFrom(

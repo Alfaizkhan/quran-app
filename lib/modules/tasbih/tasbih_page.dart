@@ -19,7 +19,7 @@ class TasbihPage extends StatelessWidget {
         title: l10n.tasbihDigital,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(20),
         child: Center(
           child: CustomPaint(
             size: const Size(
@@ -33,9 +33,7 @@ class TasbihPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const SizedBox(
-                      height: 90,
-                    ),
+                    const SizedBox(height: 96),
                     Container(
                       width: 320,
                       padding: const EdgeInsets.all(16),
@@ -52,7 +50,7 @@ class TasbihPage extends StatelessWidget {
                               text: '0' * (6 - state.count.toString().length),
                               style: lightBoldTitle.copyWith(
                                 fontFamily: 'DsDigital',
-                                fontSize: 50,
+                                fontSize: 56,
                                 color: backgroundColor.withOpacity(.1),
                               ),
                             ),

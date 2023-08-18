@@ -67,22 +67,21 @@ class SurahListData extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: _quran[index].nameTranslations!.id ?? '',
+                    text: _quran[index].nameTranslations!.en ?? '',
                     style: smallText.copyWith(
                       color: backgroundColor2.withOpacity(0.7),
                     ),
                   ),
                   const WidgetSpan(
-                    child: SizedBox(
-                      width: 5,
-                    ),
+                    child: SizedBox(width: 5),
                   ),
                   if (_quran[index].place == Place.mecca)
                     WidgetSpan(
                       child: SvgPicture.asset(
                         '$iconAsset/mecca.svg',
                         width: 12,
-                        color: backgroundColor2,
+                        colorFilter:
+                            ColorFilter.mode(backgroundColor2, BlendMode.srcIn),
                       ),
                     )
                   else
@@ -90,7 +89,8 @@ class SurahListData extends StatelessWidget {
                       child: SvgPicture.asset(
                         '$iconAsset/medina.svg',
                         width: 16,
-                        color: backgroundColor2,
+                        colorFilter:
+                            ColorFilter.mode(backgroundColor2, BlendMode.srcIn),
                       ),
                     ),
                 ],

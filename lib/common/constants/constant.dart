@@ -152,7 +152,7 @@ void showMyDialog(BuildContext context, String title, String content) {
         actions: <Widget>[
           TextButton(
             child: Text(
-              'Tutup',
+              'Ok',
               style: smallText,
             ),
             onPressed: () {
@@ -176,6 +176,11 @@ void showInfoDialog(BuildContext context, String title, String content) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(16),
+          ),
+        ),
         backgroundColor: backgroundColor2,
         title: Text(
           title,
@@ -194,9 +199,11 @@ void showInfoDialog(BuildContext context, String title, String content) {
               style: smallText,
             ),
             const SizedBox(height: 16),
-            Text(
-              l10n.builtWithLove,
-              style: mediumText,
+            Center(
+              child: Text(
+                l10n.builtWithLove,
+                style: smallText,
+              ),
             ),
           ],
         ),

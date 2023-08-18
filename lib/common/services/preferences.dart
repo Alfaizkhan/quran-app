@@ -2,6 +2,7 @@ import 'package:hive/hive.dart';
 
 class Preferences {
   Preferences._(this._box);
+
   static const _preferencesBox = '_preferencesBox';
   static const _lastSurahRead = '_lastSurahRead';
   static const _lastAyahRead = '_lastAyahRead';
@@ -20,6 +21,8 @@ class Preferences {
 
   Future<void> _setValue<T>(Object key, T value) => _box.put(key, value!);
 
+  Future<void> _removeValue<T>(Object key) => _box.delete(key);
+
   int getLastSurahRead() => _getValue(_lastSurahRead, defaultValue: 0);
 
   Future<void> setLastSurahRead(int indexSurah) =>
@@ -35,4 +38,9 @@ class Preferences {
 
   Future<void> setPrayerTimeFilter(List<String> filters) =>
       _setValue(_prayerTimeFilter, filters);
+
+  Future<void> removeLastSurahNumber(int indexSurah) =>
+      _removeValue(_lastSurahRead);
+
+  Future<void> removeLastAyahRead(int indexAyah) => _removeValue(_lastAyahRead);
 }

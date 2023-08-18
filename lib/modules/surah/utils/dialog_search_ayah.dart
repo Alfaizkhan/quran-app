@@ -19,8 +19,8 @@ void showSearchAyahDialog(
       return AlertDialog(
         backgroundColor: backgroundColor2,
         title: Text(
-          // TODO(mkhoirulwafa18): use plain bcs there is problem when using context.l10n
-          'Cari Ayat',
+          // TODO(Alfaizkhan): use plain bcs there is problem when using context.l10n
+          'Search Ayat',
           style: lightBoldTitle,
         ),
         content: Column(
@@ -28,15 +28,14 @@ void showSearchAyahDialog(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Jumlah Ayat = $totalAyat',
+              'Number of Ayat: $totalAyat',
               style: smallText,
             ),
             const SizedBox(
               height: 8,
             ),
             InputBox(
-              // TODO(mkhoirulwafa18): use plain bcs there is problem when using context.l10n
-              labelText: 'Ayat ke berapa?',
+              labelText: 'Which Ayat?',
               controller: controller,
               maxLength: 3,
               autofocus: true,
@@ -50,18 +49,16 @@ void showSearchAyahDialog(
         actions: <Widget>[
           OutlinedButton(
             child: Text(
-              // TODO(mkhoirulwafa18): use plain bcs there is problem when using context.l10n
-              'Tutup',
+              'Close',
               style: smallText,
             ),
             onPressed: () {
-              Navigator.of(context).pop();
+              Navigator.of(context).pop(false);
             },
           ),
           OutlinedButton(
             child: Text(
-              // TODO(mkhoirulwafa18): use plain bcs there is problem when using context.l10n
-              'Cari',
+              'Search',
               style: smallText,
             ),
             onPressed: () {
@@ -74,6 +71,8 @@ void showSearchAyahDialog(
                     ),
                     duration: const Duration(seconds: 1),
                   );
+                } else {
+                  Navigator.of(context).pop(true);
                 }
               }
             },

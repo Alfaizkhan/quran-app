@@ -2,7 +2,7 @@
     "@@locale": "en",
     "appName": "Al-Quran, Tasbih & Du'a",
     "appDesc": "Islamic app with daily Offline Quran, Du'a and Digital Tasbih",
-    "surahListPageAppBarTitle": "Collection of Surahs",
+    "surahListPageAppBarTitle": "Surah",
     "doaSehariHari": "Du'a",
     "quranOffline": "Al-Quran\n(Offline)",
     "shalatTime": "Prayer Time",
@@ -50,17 +50,11 @@
     "featureNeedInternet": "This feature requires internet access\ncheck your internet connection.",
     "filterList": "Filter List",
     "apply": "Apply",
-    "setLastReadInfo": "Successfully marked verse {i} as last read.",
-    "@setLastReadInfo": {
-        "placeholders": {
-            "i": {
-                "type": "String",
-                "example": "1"
-            }
-        }
-    },
     "feedbackAndReport": "Feature Requests / Report Bugs",
     "feedbackInfo": "Found a bug? or want to request another feature? Send your suggestions and feedback to email by clicking the button below.",
+    "salam": "السلام عليكم",
     "jazakallahKhair": "جزاكلله خير",
-    "builtWithLove": "built with ❤ by Alfaizkhan Ibn Arabkhan"
+    "builtWithLove": "built with ❤ by Alfaizkhan Ibn Arabkhan",
+    "comingSoon": "Coming soon.\n إن شاء الله",
+    "duaForParents": "Remember My Parents, Me and whole Ummah of ﷺ in your Du'a."
 }

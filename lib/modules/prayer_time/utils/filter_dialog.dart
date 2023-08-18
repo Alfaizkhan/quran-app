@@ -54,7 +54,7 @@ void showFilterPrayerTimeDialog(
               OutlinedButton(
                 child: Text(
                   // TODO(mkhoirulwafa18): use plain bcs there is problem when using context.l10n
-                  'Tutup',
+                  'Ok',
                   style: smallText,
                 ),
                 onPressed: () {
@@ -64,7 +64,7 @@ void showFilterPrayerTimeDialog(
               OutlinedButton(
                 child: Text(
                   // TODO(mkhoirulwafa18): use plain bcs there is problem when using context.l10n
-                  'Terapkan',
+                  'apply',
                   style: smallText,
                 ),
                 onPressed: () {

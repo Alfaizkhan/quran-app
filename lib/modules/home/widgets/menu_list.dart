@@ -14,78 +14,92 @@ class MenuList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push<MaterialPageRoute<dynamic>>(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SurahListPage(),
-                    ),
-                  );
-                },
-                child: CardMenu(
-                  color: cardPeachColor,
-                  icon: SvgPicture.asset('$iconAsset/al-quran.svg'),
-                  title: l10n.quranOffline,
-                  bg: CirclePosition.quran,
-                ),
-              ),
-              const SizedBox(width: 24),
-              GestureDetector(
-                onTap: () {
-                  showAppBottomSheet(context);
-                },
-                child: CardMenu(
-                  color: cardGreyColor,
-                  icon: SvgPicture.asset('$iconAsset/praying-hands.svg'),
-                  title: l10n.doaSehariHari,
-                  bg: CirclePosition.dua,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 24),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/prayer-time');
-                },
-                child: CardMenu(
-                  color: cardGreenColor,
-                  icon: Image.asset(
-                    '$iconAsset/shalat.png',
-                    height: 110,
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.push<MaterialPageRoute<dynamic>>(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SurahListPage(),
                   ),
-                  title: l10n.shalatTime,
-                  bg: CirclePosition.shalat,
-                ),
+                );
+              },
+              child: CardMenu(
+                color: cardPeachColor,
+                icon: SvgPicture.asset('$iconAsset/al-quran.svg'),
+                title: l10n.quranOffline,
+                bg: CirclePosition.quran,
               ),
-              const SizedBox(width: 24),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/tasbih');
-                },
-                child: CardMenu(
-                  color: cardYellowColor,
-                  icon: SvgPicture.asset('$iconAsset/tasbih.svg'),
-                  title: l10n.tasbihDigital,
-                  bg: CirclePosition.tasbih,
-                ),
+            ),
+            const SizedBox(width: 24),
+            GestureDetector(
+              onTap: () {
+                ScaffoldMessenger.of(context)
+                  ..removeCurrentSnackBar()
+                  ..showSnackBar(SnackBar(
+                  content: Text(l10n.comingSoon),
+                  duration: const Duration(seconds: 3),
+                  padding: const EdgeInsets.all(16),),
+                );
+                //showAppBottomSheet(context);
+              },
+              child: CardMenu(
+                color: cardGreyColor,
+                icon: SvgPicture.asset('$iconAsset/praying-hands.svg'),
+                title: l10n.doaSehariHari,
+                bg: CirclePosition.dua,
               ),
-            ],
-          ),
-        ],
-      ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 24),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // GestureDetector(
+            //   onTap: () {
+            //     showAppBottomSheet(context);
+            //   },
+            //   child: CardMenu(
+            //     color: cardGreyColor,
+            //     icon: SvgPicture.asset('$iconAsset/praying-hands.svg'),
+            //     title: l10n.doaSehariHari,
+            //     bg: CirclePosition.dua,
+            //   ),
+            // ),
+            // GestureDetector(
+            //   onTap: () {
+            //     Navigator.pushNamed(context, '/prayer-time');
+            //   },
+            //   child: CardMenu(
+            //     color: cardGreenColor,
+            //     icon: Image.asset(
+            //       '$iconAsset/shalat.png',
+            //       height: 110,
+            //     ),
+            //     title: l10n.shalatTime,
+            //     bg: CirclePosition.shalat,
+            //   ),
+            // ),
+            const SizedBox(width: 24),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/tasbih');
+              },
+              child: CardMenu(
+                color: cardYellowColor,
+                icon: SvgPicture.asset('$iconAsset/tasbih.svg'),
+                title: l10n.tasbihDigital,
+                bg: CirclePosition.tasbih,
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

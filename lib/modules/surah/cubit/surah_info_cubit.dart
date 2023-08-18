@@ -81,7 +81,7 @@ class SurahInfoCubit extends Cubit<SurahInfoState> {
         tafsirSurah: dataQuran[noSurah].tafsir ?? Tafsir(),
         title: dataQuran[noSurah].name ?? '',
         numberSurah: dataQuran[noSurah].numberOfSurah ?? 0,
-        translation: dataQuran[noSurah].nameTranslations!.id ?? '',
+        translation: dataQuran[noSurah].nameTranslations!.en ?? '',
         revelation: dataQuran[noSurah].type ?? Type.MAKKIYAH,
         totalAyat: dataQuran[noSurah].numberOfAyah ?? 0,
         indexLastSurah: preferences.getLastSurahRead(),

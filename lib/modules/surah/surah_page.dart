@@ -9,7 +9,6 @@ import 'package:quran_app/l10n/l10n.dart';
 import 'package:quran_app/modules/surah/cubit/murattal_cubit.dart';
 import 'package:quran_app/modules/surah/cubit/surah_info_cubit.dart';
 import 'package:quran_app/modules/surah/utils/dialog_search_ayah.dart';
-import 'package:quran_app/modules/surah/utils/tafsir_bottomsheet.dart';
 import 'package:quran_app/modules/surah/widgets/action_button.dart';
 import 'package:quran_app/modules/surah/widgets/surah_info.dart';
 import 'package:quran_app/modules/surah_list/models/quran.dart';
@@ -23,14 +22,16 @@ class SurahPage extends StatelessWidget {
     required this.dataQuran,
     this.startScroll = false,
   });
+
   final int noSurah;
   final List<Quran> dataQuran;
   final bool? startScroll;
-  final controller = ItemScrollController();
   final searchAyahController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final controller = ItemScrollController();
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -144,6 +145,8 @@ class SurahPage extends StatelessWidget {
         ..showSnackBar(
           SnackBar(
             content: Text(context.l10n.setLastReadInfo((index + 1).toString())),
+            duration: const Duration(seconds: 3),
+            padding: const EdgeInsets.all(16),
           ),
         );
     }
@@ -182,14 +185,12 @@ class SurahPage extends StatelessWidget {
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 16,
-              ),
+              const SizedBox(height: 16),
               RichText(
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: state.ayatSurah[index].translationId ?? '',
+                      text: state.ayatSurah[index].translationEn ?? '',
                       style: smallText.copyWith(
                         color: backgroundColor2,
                       ),
@@ -216,19 +217,25 @@ class SurahPage extends StatelessWidget {
         ),
         if (state.indexLastSurah == state.numberSurah &&
             state.indexLastAyah - 1 == index) ...[
-          GestureDetector(
-            onTap: setLastRead,
-            child: Icon(
-              Icons.book_rounded,
-              color: backgroundColor2,
+          Padding(
+            padding: const EdgeInsets.all(4),
+            child: GestureDetector(
+              onTap: setLastRead,
+              child: Icon(
+                Icons.book_rounded,
+                color: backgroundColor2,
+              ),
             ),
           )
         ] else ...[
-          GestureDetector(
-            onTap: setLastRead,
-            child: Icon(
-              Icons.book_outlined,
-              color: backgroundColor2.withOpacity(.3),
+          Padding(
+            padding: const EdgeInsets.all(4),
+            child: GestureDetector(
+              onTap: setLastRead,
+              child: Icon(
+                Icons.book_outlined,
+                color: backgroundColor2.withOpacity(.3),
+              ),
             ),
           )
         ],

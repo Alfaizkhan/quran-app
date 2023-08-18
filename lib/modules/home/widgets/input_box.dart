@@ -14,6 +14,7 @@ class InputBox extends StatelessWidget {
     this.maxLength,
     this.controller,
   });
+
   final ValueChanged<String>? onChanged;
   final String? labelText;
   final bool enabled;
@@ -29,7 +30,7 @@ class InputBox extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor2,
         border: Border.all(color: backgroundColor, width: 4),
-        borderRadius: BorderRadius.circular(50),
+        borderRadius: BorderRadius.circular(48),
       ),
       child: TextFormField(
         enabled: enabled,
@@ -43,11 +44,11 @@ class InputBox extends StatelessWidget {
         maxLength: maxLength,
         decoration: InputDecoration(
           isDense: true,
-          labelText: labelText,
-          labelStyle: inputLabel,
-          floatingLabelStyle: inputLabel.copyWith(height: 1),
+          hintText: labelText,
+          hintStyle: inputLabel,
+          alignLabelWithHint: true,
           contentPadding:
-              const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
           border: InputBorder.none,
           counterText: '',
         ),
