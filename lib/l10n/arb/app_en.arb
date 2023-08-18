@@ -1,0 +1,66 @@
+{
+    "@@locale": "en",
+    "appName": "Al-Quran, Tasbih & Du'a",
+    "appDesc": "Islamic app with daily Offline Quran, Du'a and Digital Tasbih",
+    "surahListPageAppBarTitle": "Collection of Surahs",
+    "doaSehariHari": "Du'a",
+    "quranOffline": "Al-Quran\n(Offline)",
+    "shalatTime": "Prayer Time",
+    "tasbihDigital": "Tasbih",
+    "errorNoSurahFound": "There are no surahs that match your search.\nTry typing the surah you are looking for again.",
+    "findSurah": "Find Surah",
+    "dontForgetPray":"Don't forget to pray salah ❤",
+    "hour": "O'clock",
+    "minute": "minute",
+    "to": "going to",
+    "internetNeeded": "Internet Required",
+    "internetNeededDesc": "To play quran audio requires an internet connection, please check your internet connection again.",
+    "tafsirSource": "",
+    "tafsirBottomSheetTitle": "Tafsir surah {surahName} ayat {ayah}",
+    "@tafsirBottomSheetTitle": {
+        "placeholders": {
+            "surahName": {
+                "type": "String",
+                "example": "Al-Fatiha"
+            },
+            "ayah": {
+                "type": "String",
+                "example": "1"
+            }
+        }
+    },
+    "lastRead": "Last Read",
+    "alFatiha": "Al-Fatiha",
+    "close": "Close",
+    "refresh": "Reload",
+    "lastReadError": "Sorry, you haven't determined your last reading,\nLet's start from the first surah, Al-Fatiha",
+    "find": "Search",
+    "findAyah": "Search Ayat",
+    "whatAyah": "What Ayat?",
+    "setLastReadInfo": "Successfully marked verse {i} as last read.",
+    "@setLastReadInfo": {
+        "placeholders": {
+            "i": {
+                "type": "String",
+                "example": "1"
+            }
+        }
+    },
+    "noInternetConnection": "Internet Connection Disconnected",
+    "featureNeedInternet": "This feature requires internet access\ncheck your internet connection.",
+    "filterList": "Filter List",
+    "apply": "Apply",
+    "setLastReadInfo": "Successfully marked verse {i} as last read.",
+    "@setLastReadInfo": {
+        "placeholders": {
+            "i": {
+                "type": "String",
+                "example": "1"
+            }
+        }
+    },
+    "feedbackAndReport": "Feature Requests / Report Bugs",
+    "feedbackInfo": "Found a bug? or want to request another feature? Send your suggestions and feedback to email by clicking the button below.",
+    "jazakallahKhair": "جزاكلله خير",
+    "builtWithLove": "built with ❤ by Alfaizkhan Ibn Arabkhan"
+}
